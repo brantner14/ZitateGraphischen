@@ -1,0 +1,327 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'HappyMonkey', 'Happy Monkey', sans-serif;
+  background: rgb(238, 238, 238);
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+header {
+  background-color: black;
+  color: white;
+  width: 100%;
+  padding: 1rem 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  font-size: 2.5rem; /* Standardgröße für Desktops */
+  margin: 0;
+}
+
+.container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem; /* Standard-Polsterung für Desktops */
+  width: 100%;
+  max-width: 1000px;
+  box-sizing: border-box;
+}
+
+.quote-box {
+  background: white;
+  padding: 4rem 3rem; /* Standard-Polsterung für Desktops */
+  border-radius: 20px;
+  box-shadow: 0 8px 30px orange;
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+  gap: 1.5rem; /* Standard-Abstand */
+}
+
+.dropdown {
+  font-size: 1rem;
+}
+
+.dropdown label {
+  font-weight: bold;
+  margin-right: 1.3rem;
+}
+
+select {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: auto; /* Standardbreite, wird responsiv angepasst */
+}
+
+.date {
+  font-size: 1rem;
+  color: #888;
+}
+
+.quote {
+  font-size: 1.8rem; /* Standard-Schriftgröße für Desktops */
+  font-weight: 500;
+  margin: 0; 
+  color: #222;
+  min-height: 8rem; /* Standard-Mindesthöhe für Desktops */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.author {
+  font-style: italic;
+  color: #555;
+  font-size: 1.4rem; /* Standard-Schriftgröße für Desktops */
+}
+
+#quote-number {
+  margin-top: 0;
+}
+
+.button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  background-color: grey;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: auto; /* Standardbreite, wird responsiv angepasst */
+  min-width: 150px; /* Mindestbreite für Buttons auf Desktops */
+}
+
+.button:hover {
+  background-color: orange;
+  transform: scale(1.05);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; 
+  gap: 1rem; 
+  width: 100%; 
+  margin-top: 0; 
+  flex-direction: row; /* Standardmäßig nebeneinander auf Desktops */
+}
+
+/* Stil für die Suchleiste */
+.search-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row; /* Standardmäßig nebeneinander auf Desktops */
+}
+
+.search-container input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  flex-grow: 1;
+  max-width: 300px; /* Maximale Breite für das Eingabefeld auf Desktops */
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 100%; /* Standardbreite, wird responsiv angepasst */
+  max-width: 200px; /* Maximale Breite für den Wrapper auf Desktops */
+  transition: box-shadow 0.3s ease;
+}
+
+.search-wrapper:hover {
+  box-shadow: 0 6px 14px orange;
+}
+
+.search-wrapper input[type="text"] {
+  border: none;
+  padding: 0.8rem 1rem;
+  font-size: 1rem;
+  flex: 1;
+  outline: none;
+}
+
+.search-button {
+  background-color: orange;
+  color: white;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-button:hover {
+  background-color: darkorange;
+  transform: scale(1.05);
+}
+
+@font-face {
+    font-family: 'HappyMonkey';
+    src: url(Probe/fonts/Happy_Monkey/HappyMonkey-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* --- Responsive Anpassungen mit Media Queries --- */
+
+/* Für Bildschirme bis zu 767px Breite (typisch für iPhones im Hochformat, kleine Smartphones) */
+@media (max-width: 767px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  header h1 {
+    font-size: 1.5rem; /* Kleinere Überschrift */
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  .quote-box {
+    padding: 2rem 1.5rem; /* Reduzierte Polsterung */
+    gap: 1rem;
+  }
+
+  .dropdown label {
+    display: block; /* Label über dem Dropdown */
+    margin-bottom: 0.5rem;
+    margin-right: 0;
+    text-align: center;
+  }
+
+  select,
+  .search-container input[type="text"] {
+    width: 100%; /* Volle Breite */
+    box-sizing: border-box;
+  }
+
+  .quote {
+    font-size: 1.4rem; /* Kleinere Schriftgröße */
+    min-height: 6rem; /* Anpassung der Mindesthöhe */
+  }
+
+  .author {
+    font-size: 1.1rem; /* Kleinere Schriftgröße */
+  }
+
+  .button-container {
+    flex-direction: column; /* Buttons untereinander */
+    gap: 0.8rem;
+  }
+
+  .button {
+    width: 100%; /* Buttons volle Breite */
+    min-width: unset; /* Mindestbreite aufheben */
+  }
+
+  .search-container {
+    flex-direction: column; /* Suchfeld und Button untereinander */
+    align-items: stretch;
+  }
+
+  .search-wrapper {
+    width: 100%; /* Suchfeld-Wrapper volle Breite */
+    max-width: none;
+  }
+
+  .search-wrapper input[type="text"] {
+    max-width: none;
+  }
+
+  .search-button {
+    width: 100%; /* Such-Button volle Breite */
+    margin-top: 0.5rem; /* Abstand zum Inputfeld */
+  }
+}
+
+/* Für Bildschirme von 768px bis 1023px Breite (typisch für iPads im Hoch- und Querformat, kleine Laptops) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  body {
+    padding: 1rem;
+  }
+
+  header h1 {
+    font-size: 2rem; /* Angepasste Überschrift */
+  }
+
+  .container {
+    padding: 1.5rem;
+  }
+
+  .quote-box {
+    padding: 3rem 2.5rem; /* Angepasste Polsterung */
+  }
+
+  .quote {
+    font-size: 1.6rem; /* Angepasste Schriftgröße */
+  }
+
+  .author {
+    font-size: 1.2rem; /* Angepasste Schriftgröße */
+  }
+
+  .dropdown label {
+    margin-right: 1rem; /* Abstand für Label anpassen */
+  }
+
+  select {
+    width: auto; /* Breite basierend auf Inhalt */
+  }
+
+  .button-container {
+    flex-direction: row; /* Buttons nebeneinander */
+    flex-wrap: wrap; /* Ermöglicht Umbruch bei vielen Buttons */
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .button {
+    width: auto;
+    min-width: 120px; /* Angepasste Mindestbreite */
+  }
+
+  .search-container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .search-container input[type="text"] {
+    max-width: 250px; /* Angepasste Maximalbreite */
+  }
+
+  .search-button {
+    margin-top: 0; /* Kein zusätzlicher Abstand */
+  }
+}
+
+/* Für Bildschirme ab 1024px Breite (Standard-Desktops und große Laptops) */
+@media (min-width: 1024px) {
+  /* Hier sind bereits die Standardstile definiert, die für Desktops gelten */
+  /* Wenn du spezifische Anpassungen nur für sehr große Bildschirme möchtest,
+     könntest du diese hier hinzufügen. */
+}
