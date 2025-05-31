@@ -1,0 +1,2 @@
+# ZitateGraphischen
+Zitate der Graphischen
