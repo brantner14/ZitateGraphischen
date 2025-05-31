@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zitate Graphische</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>Zitate der Schule "Die Graphische"</h1>
+  </header>
+
+  <main class="container">
+    <div class="quote-box">
+      <div class="dropdown">
+        <label for="category">Kategorie wählen:</label>
+        <select id="category" onchange="resetAndGenerateQuote()">
+          <option value="alle_lehrer">Alle Lehrer</option>
+          <option value="Schüler">Schüler</option>
+          <option value="Basner">Basner</option>
+          <option value="Böger">Böger</option>
+          <option value="Eminger">Eminger</option>
+          <option value="Galehr"> Galehr</option>
+          <option value="Gruber">Gruber</option>
+          <option value="Havrest">Havrest</option>
+          <option value="Hradil"> Hradil</option>
+          <option value="Honkisz">Honkisz</option>
+          <option value="Höfferer">Höfferer</option>
+          <option value="Knaus">Knaus</option>
+          <option value="König">König</option>
+          <option value="Lengauer">Lengauer</option>
+          <option value="Pixner">Pixner</option>
+          <option value="Pöschko">Pöschko</option>
+          <option value="Rizk">Rizk</option>
+          <option value="Salomon">Salomon</option>
+          <option value="Sares">Sares</option>
+          <option value="Satrapa">Satrapa</option>
+          <option value="Schopf">Schopf</option>
+          <option value="Simpson">Simpson</option>
+          <option value="Spaci">Spaci</option>
+          <option value="Stumpf">Stumpf</option>
+          <option value="Tesarek">Tesarek</option>
+          <option value="Todeschini">Todeschini</option>
+          <option value="Ulrich">Ulrich</option>
+          <option value="Zdarsky">Zdarsky</option>
+        </select>
+      </div>
+
+      <div id="search-container" class="search-container" style="display: none;">
+        <div class="search-wrapper">
+          <input type="text" id="search-input" placeholder="🔍 Namen suchen..." onkeyup="filterQuotes()" />
+         
+        </div>
+      </div>
+      
+
+      <div class="date" id="quote-date"></div>
+      <div class="quote" id="quote-text"></div>
+      <div class="author" id="quote-author"></div>
+      <div id="quote-number" style="margin-top: 10px;">Zitat 1 von ...</div>
+      <div class="button-container">
+        <button class="button" onclick="showPreviousQuote()">Vorheriges Zitat</button>
+        <button class="button" onclick="generateQuote()">Nächstes Zitat</button>
+      </div>
+        
+    </div>
+  </main>
+
+  <script src="script_modified.js"></script>
+</body>
+</html>
